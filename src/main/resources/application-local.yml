@@ -1,0 +1,26 @@
+spring:
+  h2:
+    console:
+      settings:
+        trace: false
+  datasource:
+    # need to add "." before the destination file path
+    url: jdbc:h2:file:./data/hw;DB_CLOSE_DELAY=-1
+    driverClassName: org.h2.Driver
+    username: test
+    password: test
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    # ensure script-based initialization is performed using our custom sql script
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    defer-datasource-initialization: true
+  sql:
+    init:
+      schema-locations: classpath:schema.sql
+      mode: always
+coindesk:
+  url: https://api.coindesk.com/v1/bpi/currentprice.json
+time:
+  format: yyyy/MM/dd hh:mm:ss
