@@ -36,13 +36,11 @@ class CurrencyMappingControllerTest {
     @MockBean
     private CurrencyMappingService mockCurrencyMappingService;
     private CurrencyMappingInputDTO inputDTO;
-    private CurrencyMappingOutputDTO outputDTO;
     private final String fakeCurrencyMappingId = "123";
 
     @BeforeEach
     void setUp() {
         this.inputDTO = this.genSampleCurrencyMappingInputDTO();
-        this.outputDTO = this.genSampleCurrencyMappingOutputDTO();
     }
 
     @Nested
