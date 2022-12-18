@@ -20,7 +20,9 @@ spring:
     init:
       schema-locations: classpath:schema.sql
       mode: always
+# 設定Coindesk API路徑
 coindesk:
   url: https://api.coindesk.com/v1/bpi/currentprice.json
+# 設定回傳時間格式
 time:
   format: yyyy/MM/dd hh:mm:ss
