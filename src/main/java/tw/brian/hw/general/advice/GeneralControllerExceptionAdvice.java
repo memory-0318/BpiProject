@@ -1,4 +1,4 @@
-package tw.brian.hw.general.config;
+package tw.brian.hw.general.advice;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -15,7 +15,7 @@ import tw.brian.hw.general.model.ResponseDTO;
  * @date: 2022/12/17
  */
 @ControllerAdvice
-public class GeneralControllerAdvice extends ResponseEntityExceptionHandler {
+public class GeneralControllerExceptionAdvice extends ResponseEntityExceptionHandler {
     /**
      * 處理未知的錯誤，並回傳給使用者
      *

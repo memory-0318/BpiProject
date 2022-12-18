@@ -1,11 +1,10 @@
-package tw.brian.hw.bpi.config;
+package tw.brian.hw.bpi.advice;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import tw.brian.hw.bpi.exception.BpiSourceConnectionException;
@@ -18,7 +17,7 @@ import tw.brian.hw.general.model.ResponseDTO;
  * @date: 2022/12/17
  */
 @ControllerAdvice(basePackages = { "tw.brian.hw.bpi.controller" })
-public class BpiControllerAdvice extends ResponseEntityExceptionHandler {
+public class BpiControllerExceptionAdvice extends ResponseEntityExceptionHandler {
     /**
      * 處理Json解析例外並擷取錯誤訊息，回傳給使用者
      *

@@ -1,4 +1,4 @@
-package tw.brian.hw.currency_mapping.config;
+package tw.brian.hw.currency_mapping.advice;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -17,7 +17,7 @@ import tw.brian.hw.general.model.ResponseDTO;
  * @date: 2022/12/17
  */
 @ControllerAdvice(basePackages = { "tw.brian.hw.currency_mapping.controller" })
-public class CurrencyMappingControllerAdvice extends ResponseEntityExceptionHandler {
+public class CurrencyMappingControllerExceptionAdvice extends ResponseEntityExceptionHandler {
     /**
      * 處理指定幣別重複的例外，並回傳給使用者
      *
