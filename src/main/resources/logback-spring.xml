@@ -13,10 +13,10 @@
                 <fileNamePattern>./target/log-local/logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
             </springProfile>
         </rollingPolicy>
-
         <encoder>
             <charset>utf-8</charset>
-            <Pattern>%d %-5level [%thread] %logger{0}: %msg%n</Pattern>
+            <!-- ref.: https://github.com/spring-projects/spring-boot/blob/5fc49aa485a68664dcdea83eaa366cb1142bcb32/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/defaults.xml#L14 -->
+            <pattern>${FILE_LOG_PATTERN}</pattern>
         </encoder>
     </appender>
 
