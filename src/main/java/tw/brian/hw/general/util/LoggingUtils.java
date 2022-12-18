@@ -17,6 +17,10 @@ import java.util.Map;
 public final class LoggingUtils {
     private static final Logger LOGGER = LoggerFactory.getLogger(LoggingUtils.class);
 
+    public static void logError(Throwable throwable) {
+        LOGGER.error(throwable.getMessage(), throwable);
+    }
+
     public static void logRequest(HttpServletRequest req, Object reqBody) {
         String loggingMessage = "REQUEST " +
             String.format("method=[%s] ", req.getMethod()) +

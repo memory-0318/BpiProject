@@ -1,4 +1,4 @@
-package tw.brian.hw.general.config;
+package tw.brian.hw.general.advice;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;

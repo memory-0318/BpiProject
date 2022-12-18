@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import tw.brian.hw.general.model.ResponseDTO;
+import tw.brian.hw.general.util.LoggingUtils;
 
 /**
  * @author Brian Su <memory0318@gmail.com>
@@ -25,6 +26,8 @@ public class GeneralControllerExceptionAdvice extends ResponseEntityExceptionHan
      */
     @ExceptionHandler(value = { Exception.class })
     protected ResponseEntity<Object> handleUnknownException(Exception ex, WebRequest request) {
+        LoggingUtils.logError(ex);
+
         return handleExceptionInternal(
             ex,
             // TODO: error code and message are just hard-coded

@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import tw.brian.hw.bpi.exception.BpiSourceConnectionException;
 import tw.brian.hw.bpi.exception.JsonParsingException;
 import tw.brian.hw.general.model.ResponseDTO;
+import tw.brian.hw.general.util.LoggingUtils;
 
 /**
  * @author Brian Su <memory0318@gmail.com>
@@ -27,6 +28,8 @@ public class BpiControllerExceptionAdvice extends ResponseEntityExceptionHandler
      */
     @ExceptionHandler(value = { JsonParsingException.class })
     protected ResponseEntity<Object> handleJsonParsingException(Exception ex, WebRequest request) {
+        LoggingUtils.logError(ex);
+
         return handleExceptionInternal(
             ex,
             // TODO: error code just hard-coded
@@ -45,6 +48,8 @@ public class BpiControllerExceptionAdvice extends ResponseEntityExceptionHandler
      */
     @ExceptionHandler(value = BpiSourceConnectionException.class)
     protected ResponseEntity<Object> handleConnectionException(Exception ex, WebRequest request) {
+        LoggingUtils.logError(ex);
+
         return handleExceptionInternal(
             ex,
             ResponseDTO.createFailureResponse("0001", ex.getMessage()),

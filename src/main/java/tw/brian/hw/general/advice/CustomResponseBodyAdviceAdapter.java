@@ -1,4 +1,4 @@
-package tw.brian.hw.general.config;
+package tw.brian.hw.general.advice;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;

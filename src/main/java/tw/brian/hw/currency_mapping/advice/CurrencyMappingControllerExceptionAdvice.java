@@ -10,6 +10,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import tw.brian.hw.currency_mapping.exception.CurrencyCodeExistedException;
 import tw.brian.hw.currency_mapping.exception.CurrencyMappingNotFoundException;
 import tw.brian.hw.general.model.ResponseDTO;
+import tw.brian.hw.general.util.LoggingUtils;
 
 /**
  * @author Brian Su <memory0318@gmail.com>
@@ -27,6 +28,8 @@ public class CurrencyMappingControllerExceptionAdvice extends ResponseEntityExce
      */
     @ExceptionHandler(value = { CurrencyCodeExistedException.class })
     protected ResponseEntity<Object> handleCurrencyCodeExistedException(Exception ex, WebRequest request) {
+        LoggingUtils.logError(ex);
+
         return handleExceptionInternal(
             ex,
             // TODO: error code just hard-coded
@@ -45,6 +48,8 @@ public class CurrencyMappingControllerExceptionAdvice extends ResponseEntityExce
      */
     @ExceptionHandler(value = { CurrencyMappingNotFoundException.class })
     protected ResponseEntity<Object> handleCurrencyNotFoundException(Exception ex, WebRequest request) {
+        LoggingUtils.logError(ex);
+
         return handleExceptionInternal(
             ex,
             // TODO: error code just hard-coded
