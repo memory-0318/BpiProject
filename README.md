@@ -3,8 +3,8 @@
 ## 說明
 
 - 分為三個目錄
-    - bpi: 提供Bitcoin Price Index查詢
-    - currency_mapping: 提供幣別對應維護功能 (CRUD)
+  - bpi: 提供Bitcoin Price Index查詢，根據幣別對應資料設定以及Coindesk API的最新資料，組裝成新的格式回傳給使用者
+  - currency_mapping: 提供幣別對應維護功能 (CRUD)
     - general: 專案通用性設定、資料結構以及工具，如LoggingUtils
 
 ## Logging
