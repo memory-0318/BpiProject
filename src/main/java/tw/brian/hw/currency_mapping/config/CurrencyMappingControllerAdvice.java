@@ -16,7 +16,7 @@ import tw.brian.hw.general.model.ResponseDTO;
  * @description:
  * @date: 2022/12/17
  */
-@ControllerAdvice(basePackages = { "tw.brian.hw.currency_mapping_ma.controller" })
+@ControllerAdvice(basePackages = { "tw.brian.hw.currency_mapping.controller" })
 public class CurrencyMappingControllerAdvice extends ResponseEntityExceptionHandler {
     /**
      * 處理指定幣別重複的例外，並回傳給使用者
